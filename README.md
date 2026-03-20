@@ -30,7 +30,7 @@ Incase the graph does not fit into VRAM, we are forced to perform *d_to* and *d_
 For the time being, have maintained this approach.
 
 ### Visual description of program flow
-![CUDA_functions_kernel_flow3](C:\Users\Kevin T M\Documents\DSA_via_CUDA\Paper_Contents\CUDA_functions_kernels_flow_3.jpg)
+![CUDA_functions_kernel_flow3](C:/Users/Kevin T M/Documents/DSA_via_CUDA/Paper_Contents/CUDA_functions_kernels_flow_3.jpg)
 
 
 
