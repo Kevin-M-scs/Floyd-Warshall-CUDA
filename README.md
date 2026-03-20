@@ -11,8 +11,8 @@ Firstly, the adjacency matrix is broken down into *tiles* of fixed size. This si
 The program follows to check whether the specified VRAM capacity, set by user, can contain the input graph's adjacency matrix or not. According to this, subsequent actions are determined:
 #### When graph fits into VRAM
 + Full adjacency matrix is shifted to VRAM in a tile-wise fashion via repeated cudaMemcpy() calls
-+ For each intermediate vertex, a *d_to* and *d_from* array are extracted from the VRAM-resident matrix and stored in VRAM. For the kth intermediate vertex:
-    d_to => array storing the kth column of matrix
++ For each intermediate vertex, a *d_to* and *d_from* arrays are extracted from the VRAM-resident matrix and stored in VRAM. For the kth intermediate vertex: <br>
+    d_to => array storing the kth column of matrix<br>
     d_from => array storing the kth row of matrix
 + *d_to* and *d_from* are extracted in parallel by running their extraction kernels in two separate CUDA streams
 
