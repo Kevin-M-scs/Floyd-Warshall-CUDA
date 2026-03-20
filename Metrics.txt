@@ -10,10 +10,9 @@ Please Note:
 2.5L (5X5 grid): 32.348 s
 3L (6X6 grid): 53.538 s
 3.5L (7X7 grid): 86.509 s
-4L (8X8 grid):  141.956 s (97% util initially then dropped to 88%)
+4L (8X8 grid):  141.956 s (97% GPU util initially then dropped to 88%)
 4.5L (9X9 grid): 186.714 s 
 5L (10X10 grid): 365.968 s
 5.5L (11x11 grid): 378.088 s
 6L (12X12 grid): 504.566 s (8 mins 24s 566 ms)
 
-Nsight Compute Metrics to be added soon after further analysis and revision.
