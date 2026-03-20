@@ -36,7 +36,7 @@ For the time being, have maintained this approach.
 The obtained results are from runs on an NVIDIA GeForce RTX 4060 Laptop GPU with 8GB GDDR6 Memory.
 
 ### Datasets
-Each graph is stored in a csv file in a [source,destination,weight] format per edge. Credit for the datasets and the functions used to read them, go to my kind seniors. 
+Each graph is stored in a csv file with a [source,destination,weight] format per edge. Credit for the datasets and the functions used to read them, go to my kind seniors. 
 |Name|No. Edges|No. Vertices|
 |---|---|---|
 |Graph 1|1,00,000|5,000|
