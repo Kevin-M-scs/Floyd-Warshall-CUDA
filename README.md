@@ -30,7 +30,7 @@ Incase the graph does not fit into VRAM, we are forced to perform *d_to* and *d_
 For the time being, have maintained this approach.
 
 ### Visual description of program flow
-![CUDA_functions_kernels_flow3](./../../Documents/DSA_via_CUDA/Paper_Contents/CUDA_functions_kernels_flow_3.jpg)
+![CUDA_functions_kernels_flow3](../../../../Documents/DSA_via_CUDA/Paper_Contents/CUDA_functions_kernels_flow_3.jpg)
 
 ### Hardware Used
 The obtained results are from runs on an NVIDIA GeForce RTX 4060 Laptop GPU with 8GB GDDR6 Memory.
@@ -51,7 +51,7 @@ Each graph is stored in a csv file in a [source,destination,weight] format. Cred
 |Graph 10|5,50,000|27,500|
 |Graph 11|6,00,000|30,000|
 
-Please refer to ***Metrics.txt*** for the timing results.
+Please refer to ***Metrics.txt*** for timing results.
 
 
 
