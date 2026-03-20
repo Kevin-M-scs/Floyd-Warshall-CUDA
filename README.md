@@ -36,7 +36,7 @@ For the time being, have maintained this approach.
 The obtained results are from runs on an NVIDIA GeForce RTX 4060 Laptop GPU with 8GB GDDR6 Memory.
 
 ### Datasets
-Each graph is stored in a csv file in a [source,destination,weight] format. Credit for the datasets and the functions used to read them, go to my kind seniors. Note that all have used a fixed tile size of 2500x2500
+Each graph is stored in a csv file in a [source,destination,weight] format. Credit for the datasets and the functions used to read them, go to my kind seniors. 
 |Name|No. Edges|No. Vertices|
 |---|---|---|
 |Graph 1|1,00,000|5,000|
@@ -50,6 +50,8 @@ Each graph is stored in a csv file in a [source,destination,weight] format. Cred
 |Graph 9|5,00,000|25,000|
 |Graph 10|5,50,000|27,500|
 |Graph 11|6,00,000|30,000|
+
+Please refer to Metrics.txt for the timing results.
 
 
 
