@@ -8,16 +8,19 @@ For each pair of vertices, the Floyd Warshall algorithm checks all possible inte
 
 ### Implementation Details
 Firstly, the adjacency matrix is broken down into *tiles* of fixed size. This simplifes the transfer of data between RAM and VRAM later on. Then the input graph's CSV file is read and the adjacency matrix is populated.
-The program follows to check whether the specified VRAM capacity, set by user, can contain the input graph's adjacency matrix or not. According to this, subsequent actions are determined:
+The program proceeds to check whether the specified VRAM capacity, set by user, can contain the input graph's adjacency matrix or not. According to this, subsequent actions are determined:
 #### When graph fits into VRAM
 + Full adjacency matrix is shifted to VRAM in a tile-wise fashion via repeated cudaMemcpy() calls
 + For each intermediate vertex, *d_to* and *d_from* arrays are extracted from the VRAM-resident matrix and stored in VRAM. For the kth intermediate vertex: <br>
     *d_to* => array storing the kth column of matrix<br>
     *d_from* => array storing the kth row of matrix<br>
 + *d_to* and *d_from* extraction is parallelized by running their extraction kernels in two separate CUDA streams
-+ Above arrays are used to relax the entire matrix for the kth intermediate vertex
++ These arrays are used to relax the entire matrix for the kth intermediate vertex. Currently, a single row of tiles is dealt with at a time, with all the weights that the row covers, being relaxed in parallel. Note that number of tile rows, involved above, could potentially be increased for better performance
 + Above process repeats until all N^2 intermediate vertices have been covered
 + Relaxed matrix is shifted back to RAM, tile_wise
+#### When graph fits into VRAM
++ 
+
 
 
 
