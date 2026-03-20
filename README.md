@@ -30,7 +30,18 @@ Incase the graph does not fit into VRAM, we are forced to perform *d_to* and *d_
 For the time being, have maintained this approach.
 
 ### Visual description of program flow
-![CUDA_functions_kernel_flow3](./../../../Documents/DSA_via_CUDA/Paper_Contents/CUDA_functions_kernels_flow_3.jpg)
+![CUDA_functions_kernels_flow3](./../../../Documents/DSA_via_CUDA/Paper_Contents/CUDA_functions_kernels_flow_3.jpg)
+
+### Hardware Used
+The obtained results are from runs on an NVIDIA GeForce RTX 4060 Laptop GPU with 8GB GDDR6 Memory.
+
+### Datasets
+Each graph is stored in a csv file in a [source,destination,weight] format. Credit for the datasets and the functions used to read them, go to my kind seniors. Note that all have used a fixed tile size of 2500x2500
+|Name|Edges|Vertices|
+|---|---|---|
+|Graph 1|100,000|5,000|
+
+
 
 
 
@@ -41,10 +52,10 @@ For the time being, have maintained this approach.
 FW APSP breif explanation
 Implementation (two sub parts, when graph fits into VRAM and when not so)
 (mention that no. of ints is a custome parameter the programmer can set according to requirement)
+Visuals
 Hardware Used (RTX 4060)
 Datasets (mention only sizes and give due credit to Bhaiyas and for the readgrapgfrom csv function, mention the expected format of dataset)
-
-
+Metrics
 
 
 Kevin T M
