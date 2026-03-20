@@ -37,10 +37,19 @@ The obtained results are from runs on an NVIDIA GeForce RTX 4060 Laptop GPU with
 
 ### Datasets
 Each graph is stored in a csv file in a [source,destination,weight] format. Credit for the datasets and the functions used to read them, go to my kind seniors. Note that all have used a fixed tile size of 2500x2500
-|Name|Edges|Vertices|
+|Name|No. Edges|No. Vertices|
 |---|---|---|
-|Graph 1|100,000|5,000|
-
+|Graph 1|1,00,000|5,000|
+|Graph 2|1,50,000|7,500|
+|Graph 3|2,00,000|10,000|
+|Graph 4|2,50,000|12,500|
+|Graph 5|3,00,000|15,000|
+|Graph 6|3,50,000|17,500|
+|Graph 7|4,00,000|20,000|
+|Graph 8|4,50,000|22,500|
+|Graph 9|5,00,000|25,000|
+|Graph 10|5,50,000|27,500|
+|Graph 11|6,00,000|30,000|
 
 
 
