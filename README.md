@@ -15,11 +15,23 @@ The program proceeds to check whether the specified VRAM capacity, set by user, 
     *d_to* => array storing the kth column of matrix<br>
     *d_from* => array storing the kth row of matrix<br>
 + *d_to* and *d_from* extraction is parallelized by running their extraction kernels in two separate CUDA streams
-+ These arrays are used to relax the entire matrix for the kth intermediate vertex. Currently, a single row of tiles is dealt with at a time, with all the weights that the row covers, being relaxed in parallel. Note that number of tile rows, involved above, could potentially be increased for better performance
++ These arrays are used to relax the entire matrix for the kth intermediate vertex. Currently, a single row of tiles is dealt with at a time, with all the weights that the row covers, being relaxed in parallel. Note that number of tile rows involved above, could potentially be increased for better performance
 + Above process repeats until all N^2 intermediate vertices have been covered
 + Relaxed matrix is shifted back to RAM, tile_wise
-#### When graph fits into VRAM
-+ 
+#### When graph exceeds specified VRAM limit
++ We first calculate the optimal number of tile rows that can fit into the specified VRAM limit, say *x* rows
++ The adjacency matrix is broken into batches, each having *x* tile rows, last batch may have less 
++ For each intermediate vertex k, *d_to* and *d_from* arrays are extracted and stored in VRAM. Their extraction, however, is sequential here. Please refer to the *Observations* section for a broader explanation.
++ In a batch-wise manner, each set of *x* tile rows is transferred to VRAM, relaxed using *d_to* and *d_from* and subsequently shifted back to RAM. This repeats until the full matrix has been relaxed using the intermediate vertex under consideration.
++ Using the above procedure, the full matrix is relaxed for every intermediate vertex until all N^2 of them have been covered
+#### Observations and Points of Improvement
+Incase the graph does not fit into VRAM, we are forced to perform *d_to* and *d_from* extraction on a RAM-resident matrix and hence the lack of CUDA parallelization. This sequential operation indeed slows down the algorithm, furthermore, the overhead of per-batch cudaMemcpy() adds on.
+For the time being, have maintained this approach.
+
+
+
+overhead added due to batching etc..., sequential extractionof d_to and d_from in second case, but the max size of the datasets rested here only reuired two batches for our GPU VRAM (point of comfort)
+batch wise tranfer of tile rwos per intermediate vertex adds singificatn overhead
 
 
 
