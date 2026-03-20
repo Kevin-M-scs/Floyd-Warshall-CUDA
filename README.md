@@ -24,19 +24,13 @@ The program proceeds to check whether the specified VRAM capacity, set by user, 
 + For each intermediate vertex k, *d_to* and *d_from* arrays are extracted and stored in VRAM. Their extraction, however, is sequential here. Please refer to the *Observations* section for a broader explanation.
 + In a batch-wise manner, each set of *x* tile rows is transferred to VRAM, relaxed using *d_to* and *d_from* and subsequently shifted back to RAM. This repeats until the full matrix has been relaxed using the intermediate vertex under consideration.
 + Using the above procedure, the full matrix is relaxed for every intermediate vertex until all N^2 of them have been covered
-#### Observations and Points of Improvement
+
+### Observations 
 Incase the graph does not fit into VRAM, we are forced to perform *d_to* and *d_from* extraction on a RAM-resident matrix and hence the lack of CUDA parallelization. This sequential operation indeed slows down the algorithm, furthermore, the overhead of per-batch cudaMemcpy() adds on.
 For the time being, have maintained this approach.
 
-
-
-overhead added due to batching etc..., sequential extractionof d_to and d_from in second case, but the max size of the datasets rested here only reuired two batches for our GPU VRAM (point of comfort)
-batch wise tranfer of tile rwos per intermediate vertex adds singificatn overhead
-
-
-
-
-
+### Visual description of program flow
+!["CUDA_functions_kernel_flow3"](".\..\..\..\Documents\DSA_via_CUDA\Paper_Contents")
 
 
 
